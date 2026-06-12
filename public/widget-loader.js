@@ -1,5 +1,5 @@
 // Fetch the configuration (e.g., from a JSON file or API)
-fetch('https://person-data-ai.web.app/widget-config.json')
+fetch('http://localhost:8001/widget-config.json')
   .then(response => response.json())
   .then(config => {
     const iframe = document.createElement('iframe');
@@ -32,7 +32,7 @@ fetch('https://person-data-ai.web.app/widget-config.json')
     // Fallback: Use default position
     const iframe = document.createElement('iframe');
     iframe.id = 'jps-chat-widget-iframe';
-    iframe.src = 'https://person-data-ai.web.app/widget.html';
+    iframe.src = 'http://localhost:8001/widget.html';
     iframe.style.position = 'fixed';
     iframe.style.bottom = '20px';
     iframe.style.right = '20px';

@@ -1,6 +1,6 @@
 {
   "api": {
-    "url": "https://fastapi-python-chatbot.vercel.app/chat",
+    "url": "http://localhost:8000/chat",
     "privacy_url": "#"
   },
 
@@ -41,7 +41,7 @@
     "offset_y": 28
   },
   
-  "src": "https://person-data-ai.web.app/widget.html",
+  "src": "http://localhost:8001/widget.html",
   "bottom": "30px",
   "right": "30px",
   "height": "100%",
