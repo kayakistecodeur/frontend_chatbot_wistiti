@@ -1,0 +1,51 @@
+{
+  "api": {
+    "url": "http://localhost:8000/chat",
+    "privacy_url": "#"
+  },
+
+  "branding": {
+    "bot_name": "Assistant IA Wistitibox",
+    "bot_subtitle": "Location de photobooth · Assistant",
+    "status_text": "En ligne · répond en quelques secondes",
+    "welcome_message": "Bonjour ! 👋 Je suis votre assistant de chez Wistitibox. Je peux vous aider à répondre à vos questions. N'hésitez pas à me poser celle que vous souhaitez !",
+    "input_placeholder": "Posez votre question…",
+    "footer_note": "Propulsé par IA",
+    "logo_path": "wistiti_logo.png", 
+    "logo_chat_icon_website": "wistiti_logo.png" 
+  },
+
+  "suggestions": [
+    { "label": "📷 Services proposés",  "text": "Quels services proposez-vous ?" },
+    { "label": "📅 Disponibilités",    "text": "Vérifier les disponibilités" },
+    { "label": "💶 Tarifs",            "text": "Quels sont vos tarifs ?" }
+  ],
+
+  "theme": {
+    "primary":       "#0d1f2d",
+    "primary_light": "#1a4a6e",
+    "accent":        "#c8a96e",
+    "accent_light":  "#e8d5a3",
+    "background":    "#f5f2ee",
+    "foam":          "#e8f4f8",
+    "text_dark":     "#0d1f2d",
+    "text_muted":    "#6b8299",
+    "wave":          "#2d7eb5"
+  },
+
+  "layout": {
+    "position": "bottom-right",
+    "window_width":  370,
+    "window_height": 560,
+    "offset_x": 28,
+    "offset_y": 28
+  },
+  
+  "src": "http://localhost:8001/widget.html",
+  "bottom": "30px",
+  "right": "30px",
+  "height": "100%",
+  "width": "420px"
+}
+
+
