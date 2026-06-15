@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Assistant JPS Bateaux</title>
+  <title>Assistant IA Person</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -36,10 +36,10 @@
     /* ── Bouton flottant ── */
     #chat-toggle {
       position: fixed;
-      bottom: 28px;
+      /* bottom: 28px;
       right: 28px;
       width: 62px;
-      height: 62px;
+      height: 62px; */
       border-radius: 50%;
       background: var(--navy);
       border: 2px solid var(--gold);
@@ -138,10 +138,10 @@
     /* ── Fenêtre chat ── */
     #chat-window {
       position: fixed;
-      bottom: 104px;
+      /* bottom: 104px;
       right: 28px;
       width: 370px;
-      height: 560px;
+      height: 560px; */
       background: var(--white);
       border-radius: var(--radius);
       box-shadow: 0 4px 20px rgba(13,31,45,0.25), 0 0 0 1px rgba(200,169,110,0.2);
@@ -510,6 +510,7 @@
  
     // ── Layout ──
     const lay = cfg.layout;
+    const lay_chat_toggle = cfg.layout_chat_toggle;  
     const win = document.getElementById("chat-window");
     const tog = document.getElementById("chat-toggle");
     const isRight  = lay.position.includes("right");
@@ -519,9 +520,12 @@
     win.style.height = lay.window_height + "px";
  
     // Position toggle & window
-    tog.style[isBottom ? "bottom" : "top"] = lay.offset_y + "px";
-    tog.style[isRight  ? "right"  : "left"] = lay.offset_x + "px";
-    win.style[isBottom ? "bottom" : "top"]  = (lay.offset_y + 74) + "px";
+    tog.style[isBottom ? "bottom" : "top"] = lay_chat_toggle.offset_y + "px";
+    tog.style["height"] = lay_chat_toggle.height + "px";
+    tog.style[isRight  ? "right"  : "left"] = lay_chat_toggle.offset_x + "px";
+    tog.style["width"] = lay_chat_toggle.width + "px";
+
+    win.style[isBottom ? "bottom" : "top"]  = (lay.offset_y) + "px";
     win.style[isRight  ? "right"  : "left"] = lay.offset_x + "px";
  
     // ── Branding ──
@@ -650,7 +654,7 @@
 
     try {
       const res = await fetch(API_URL, {
-        method: "GET",
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ session_id: SESSION_ID, message: text }),
       });
